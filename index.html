@@ -3,78 +3,122 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Join VIP Trading Group</title>
+<title>Nafis Quotex Signals</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-body{
-height:100vh;
-background:url("https://i.ibb.co/9H4G7Kzz/0b9976a233dce85e182f02dfed5754b4.jpg") no-repeat center 35%/cover;
-display:flex;
-justify-content:center;
-align-items:center;
-color:white;
+body {
+  height: 100vh;
+  background: url("https://i.ibb.co/9H4G7Kzz/0b9976a233dce85e182f02dfed5754b4.jpg") no-repeat center 35%/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
 }
 
-.overlay{
-background:rgba(0,0,0,0.55);
-width:100%;
-height:100%;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
+.overlay {
+  background: rgba(0,0,0,0.65);
+  width: 100%;
+  max-width: 520px;
+  padding: 35px 25px;
+  text-align: center;
+  border-radius: 20px;
+  animation: fadeIn 1.2s forwards;
+  position: relative;
 }
 
-.title{
-font-size:32px;
-font-weight:bold;
-margin-bottom:15px;
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
 
-.members{
-font-size:20px;
-margin-bottom:10px;
-color:#00ff9d;
+.title {
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #ffd700; /* subtle gold for premium feel */
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.6);
+  letter-spacing: 0.5px;
 }
 
-.countdown{
-font-size:26px;
-margin:20px 0;
-color:#ffd000;
+.subtitle {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #ffffffcc;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
 }
 
-.btn{
-background:#0088cc;
-padding:18px 40px;
-font-size:22px;
-border-radius:12px;
-text-decoration:none;
-color:white;
-font-weight:bold;
-transition:0.3s;
+.members {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #00ff9d;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
 }
 
-.btn:hover{
-background:#00aaff;
-transform:scale(1.08);
+.countdown {
+  font-size: 24px;
+  margin: 20px 0;
+  color: #ffd000;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
 }
 
-.note{
-margin-top:15px;
-font-size:16px;
-opacity:0.9;
+.btn {
+  background: #006699;
+  padding: 16px 40px;
+  font-size: 20px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  transition: 0.3s, box-shadow 0.3s;
+  display: inline-block;
 }
 
+.btn:hover {
+  background: #0088cc;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #0088cc;
+}
+
+.note {
+  margin-top: 15px;
+  font-size: 16px;
+  opacity: 0.9;
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+}
+
+/* Mobile responsive */
+@media(max-width:500px){
+  .title{font-size:28px;}
+  .subtitle{font-size:16px;}
+  .members{font-size:16px;}
+  .countdown{font-size:20px;}
+  .btn{font-size:18px;padding:14px 30px;}
+}
+
+/* Popup notification */
+#popup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(0,0,0,0.85);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 15px;
+  display: none;
+  box-shadow: 0 0 15px rgba(0,255,157,0.7);
+  font-size: 16px;
+  font-weight: 500;
+}
 </style>
 </head>
 
@@ -82,47 +126,52 @@ opacity:0.9;
 
 <div class="overlay">
 
-<div class="title">🔥 VIP Quotex Signal Group</div>
+  <div class="title">Nafisa Quotex Signals</div>
 
-<div class="members">👥 Live Members Online: <span id="members">238</span></div>
+  <div class="members">👥 Live Members Online: <span id="members">650</span></div>
 
-<div class="countdown">
-⏳ Redirecting in <span id="timer">10</span>s
+  <div class="countdown">
+    ⏳ Redirecting in <span id="timer">10</span>s
+  </div>
+
+  <a href="https://t.me/+pY-WMnEFcyA2YzRl" class="btn">
+    JOIN TELEGRAM NOW
+  </a>
+
+  <div class="note">
+    ⚡ Limited spots available today
+  </div>
+
 </div>
 
-<a href="https://t.me/+pY-WMnEFcyA2YzRl" class="btn">
-JOIN TELEGRAM NOW
-</a>
-
-<div class="note">
-⚡ Limited spots available today
-</div>
-
-</div>
+<div id="popup">📢 New member joined VIP group</div>
 
 <script>
+// Fake live members counter between 650 and 750
+setInterval(() => {
+  let num = document.getElementById("members");
+  num.innerText = 650 + Math.floor(Math.random() * 101);
+}, 3000);
 
-// fake live members
-setInterval(()=>{
-let num = document.getElementById("members")
-num.innerText = 220 + Math.floor(Math.random()*40)
-},3000)
+// Countdown timer + redirect
+let time = 10;
+let timer = document.getElementById("timer");
 
-// countdown
-let time = 10
-let timer = document.getElementById("timer")
+let countdown = setInterval(() => {
+  time--;
+  timer.innerText = time;
+  if (time <= 0) {
+    clearInterval(countdown);
+    window.location.href = "https://t.me/+pY-WMnEFcyA2YzRl";
+  }
+}, 1000);
 
-let countdown = setInterval(()=>{
-time--
-timer.innerText=time
-
-if(time<=0){
-clearInterval(countdown)
-window.location.href="https://t.me/+pY-WMnEFcyA2YzRl"
-}
-
-},1000)
-
+// Show random popup notifications
+setInterval(() => {
+  let popup = document.getElementById("popup");
+  popup.style.display = "block";
+  setTimeout(() => { popup.style.display = "none"; }, 3000);
+}, 7000);
 </script>
 
 </body>
