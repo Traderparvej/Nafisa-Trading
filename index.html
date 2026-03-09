@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join VIP Trading Group</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+height:100vh;
+background:url("https://i.ibb.co/9H4G7Kzz/0b9976a233dce85e182f02dfed5754b4.jpg") no-repeat center 35%/cover;
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+}
+
+.overlay{
+background:rgba(0,0,0,0.55);
+width:100%;
+height:100%;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.title{
+font-size:32px;
+font-weight:bold;
+margin-bottom:15px;
+}
+
+.members{
+font-size:20px;
+margin-bottom:10px;
+color:#00ff9d;
+}
+
+.countdown{
+font-size:26px;
+margin:20px 0;
+color:#ffd000;
+}
+
+.btn{
+background:#0088cc;
+padding:18px 40px;
+font-size:22px;
+border-radius:12px;
+text-decoration:none;
+color:white;
+font-weight:bold;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#00aaff;
+transform:scale(1.08);
+}
+
+.note{
+margin-top:15px;
+font-size:16px;
+opacity:0.9;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="overlay">
+
+<div class="title">🔥 VIP Quotex Signal Group</div>
+
+<div class="members">👥 Live Members Online: <span id="members">238</span></div>
+
+<div class="countdown">
+⏳ Redirecting in <span id="timer">10</span>s
+</div>
+
+<a href="https://t.me/+pY-WMnEFcyA2YzRl" class="btn">
+JOIN TELEGRAM NOW
+</a>
+
+<div class="note">
+⚡ Limited spots available today
+</div>
+
+</div>
+
+<script>
+
+// fake live members
+setInterval(()=>{
+let num = document.getElementById("members")
+num.innerText = 220 + Math.floor(Math.random()*40)
+},3000)
+
+// countdown
+let time = 10
+let timer = document.getElementById("timer")
+
+let countdown = setInterval(()=>{
+time--
+timer.innerText=time
+
+if(time<=0){
+clearInterval(countdown)
+window.location.href="https://t.me/+pY-WMnEFcyA2YzRl"
+}
+
+},1000)
+
+</script>
+
+</body>
+</html>
